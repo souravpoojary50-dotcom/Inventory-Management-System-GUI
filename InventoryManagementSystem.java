@@ -44,7 +44,29 @@ public class InventoryManagementSystem {
         frame.add(new JLabel("Quantity"));
         frame.add(qtyField);
         frame.add(addBtn);
-    }
+        frame.add(deleteBtn);
+        frame.add(viewBtn);
+        frame.add(display);
+        addBtn.addActionListener(e ->{
+            int id=Integer.parseInt(idField.getText());
+            String name=nameField.getText();
+            int qty=Integer.parseInt(qtyField.getText());
+            inventory.add(new Item(id,name,qty));
+            display.setText("Item Added Successfully\n");
+             });
+            viewBtn.addActionListener(e ->{
+            display.setText("");
+            for(Item i: inventory){
+                display.append(i.toString() +"\n");
+            }
+         });
+         deleteBtn.addActionListener(e ->{
+            int id=Integer.parseInt(idField.getText());
+            inventory.removeIf(item ->item.id==id);
+            display.setText("Item Deleted");
+         });
+           frame.setVisible(true);
+            }
 
     
 }
