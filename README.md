@@ -45,6 +45,6 @@ A GUI window will open where you can:
 
 👨‍💻 Author
 
-Sourav Poojary
+Sowrav Poojary
 
 Java Developer | Computer Science Student
